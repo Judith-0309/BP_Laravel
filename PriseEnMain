@@ -1,0 +1,10 @@
+1-creer un projet  (documentation de Laravel)
+composer create-project --prefer-dist laravel/laravel nomProjet "5.8.*"
+Pour le demarrage du serveur :php artisan serve 
+
+2-Creation de model
+php artisan make:model nomDuModel1 -m (si on doit gerer les clés étrangeres on commence toujours par l'entité qui doit migrer vers 
+ex: client et compte on commence tjrs par client)
+php artisan make:model nomDuModel2 -m 
+
+pour creer les tables au niveau de la base de donnees:php artisan migrate
