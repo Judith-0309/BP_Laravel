@@ -19,7 +19,7 @@
                             <li>
                                 <a href="">Ajout Client</a>   
                             <ul>
-                                <li><a href="{{route('')}}">Particulier</a></li>
+                                <li><a href="">Particulier</a></li>
                                 <li><a href="{{route('addClient')}}">Entreprise</a></li>  
                             </ul>
                             </li>

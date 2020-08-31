@@ -10,15 +10,15 @@ class ClientEntrepriseController extends Controller
 {
     public function add()
     {
-        return view('client.add');
+        return view('clientEntreprise.add');
     }
     public function getAll()
     {
-        return view('client.list'); 
+        return view('clientEntreprise.list'); 
     }
     public function edit($id)
     {
-        return view('client.edit'); 
+        return view('clientEntreprise.edit'); 
     }
     public function update()
     {

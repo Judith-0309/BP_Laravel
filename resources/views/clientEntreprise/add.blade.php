@@ -1,4 +1,4 @@
-@include('layouts.app')
+@include('welcome')
 
     <head>
         <meta charset="UTF-8">
