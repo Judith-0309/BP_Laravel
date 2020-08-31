@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Compte;
+//use Illuminate\Http\Request as HttpRequest;
+//use Illuminate\Support\Facades\Request;
+use Symfony\Component\HttpFoundation\Request ;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
 class CompteController extends Controller
 {
@@ -26,4 +30,19 @@ class CompteController extends Controller
     {
         return $this->getAll(); 
     }
+    public function persist(Request $request)
+    {
+        $compte = new Compte();
+
+        $compte->typeCompte = $request->typeCompte;
+        $compte->NumeroCompte = $request->NumeroCompte;
+        $compte->CleRib = $request->CleRib;
+        $compte->EtatCompte = $request->EtatCompte;
+        $compte->DepotInitial = $request->DepotInitial;
+        $compte->DateOuverture = $request->DateOuverture;
+
+        $compte->save();
+        return $this->add(); 
+    }
 }
+

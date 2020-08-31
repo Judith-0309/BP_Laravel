@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\ClientEntreprise;
+//use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request ;
 
 class ClientEntrepriseController extends Controller
 {
@@ -25,5 +27,20 @@ class ClientEntrepriseController extends Controller
     public function delete($id)
     {
         return $this->getAll(); 
+    }
+    public function persist(Request $request)
+    {
+        $client = new ClientEntreprise();
+
+        $client->nomEntreprise = $request->nomEntreprise;
+        $client->adresse = $request->dresse;
+        $client->email = $request->email;
+        $client->telephone= $request->telephone;
+        $client->ninea = $request->ninea;
+        $client->registreCom = $request->DregistreCom;
+        $client->raisonSociale = $request->raisonSociale;
+
+        $client->save();
+        return $this->add(); 
     }
 }
