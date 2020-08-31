@@ -33,14 +33,15 @@ class ClientEntrepriseController extends Controller
         $client = new ClientEntreprise();
 
         $client->nomEntreprise = $request->nomEntreprise;
-        $client->adresse = $request->dresse;
+        $client->adresse = $request->adresse;
         $client->email = $request->email;
         $client->telephone= $request->telephone;
         $client->ninea = $request->ninea;
-        $client->registreCom = $request->DregistreCom;
+        $client->registreCom = $request->registreCom;
         $client->raisonSociale = $request->raisonSociale;
 
-        $client->save();
-        return $this->add(); 
+        $result = $client->save();
+        
+        return view('clientEntreprise.add' ,['confirmation'=>$result]); 
     }
 }

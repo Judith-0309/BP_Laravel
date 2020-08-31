@@ -12,6 +12,13 @@
 
     <body>
     
+        @if(isset($confirmation)) 
+                 @if($confirmation ==1)
+                   <div class="alert alert-success">Client ajouté</div>
+                   @else
+                     <div class="alert alert-danger">Client non ajouté</div>
+                 @endif   
+               @endif
    
     <form action="{{route('persistCompte')}}" method="POST" id="myformCompte" >
         @csrf

@@ -41,8 +41,10 @@ class CompteController extends Controller
         $compte->DepotInitial = $request->DepotInitial;
         $compte->DateOuverture = $request->DateOuverture;
 
-        $compte->save();
-        return $this->add(); 
+        $result = $compte->save();      //1(true) or 0(False)
+       echo $result;
+       
+       // return $this->add(); 
     }
 }
 
